@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AddOption from './components/AddOption';
+import Option from './components/Option';
+import Action from './components/Action';
+import Options from './components/Options';
+import Header from './components/Header';
+import IndecisionApp from './components/IndecisionApp';
 
-const template = <p>This is a test</p>;
-
-ReactDOM.render(template, document.getElementById('app'));
+ReactDOM.render(
+  <IndecisionApp options={["a", "b", "c"]} />,
+  document.getElementById("app")
+);
