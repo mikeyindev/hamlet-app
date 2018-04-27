@@ -7,20 +7,26 @@ console.log(path.join(__dirname, 'public'));
 // console.log(__dirname);
 
 module.exports = {
+  mode: "development",
   entry: "./src/app.js",
   output: {
     path: path.join(__dirname, "public"),
     filename: "bundle.js"
   },
   module: {
-    rules: [{
-      // Run the babel-loader plugin for every JS file using the presets in the .babelrc file
-      loader: 'babel-loader',
-      // Only look for JS files
-      test: /\.js$/,
-      // Exclude node_modules directory
-      exclude: /node_modules/
-    }]
+    rules: [
+      {
+        // Run the babel-loader plugin for every JS file using the presets in the .babelrc file
+        loader: "babel-loader",
+        // Only look for JS files
+        test: /\.js$/,
+        // Exclude node_modules directory
+        exclude: /node_modules/
+      }
+    ]
   },
-  devtool: 'cheap-module-eval-source-map'
+  devtool: "cheap-module-eval-source-map",
+  devServer: {
+    contentBase: path.join(__dirname, "public")
+  }
 };
