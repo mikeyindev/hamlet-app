@@ -21,5 +21,6 @@ module.exports = {
       // Exclude node_modules directory
       exclude: /node_modules/
     }]
-  }
+  },
+  devtool: 'cheap-module-eval-source-map'
 };
