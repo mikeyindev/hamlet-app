@@ -104,22 +104,15 @@ class IndecisionApp extends React.Component {
     const subtitle = "Put your life in the hands of a computer";
 
     // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. IndecisionApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
-    return (
-      <div>
+    return <div>
         <Header />
-        <Action
-          hasOptions={this.state.options.length}
-          handlePick={this.handlePick}
-        />
-        <Options
-          options={this.state.options}
-          handleDeleteAllOptions={this.handleDeleteAllOptions}
-          handleDeleteOption={this.handleDeleteOption}
-        />
-        <AddOption handleAddOption={this.handleAddOption} />
-        <OptionModal selectedOption={this.state.selectedOption} clearSelectedOption={this.clearSelectedOption}/>
-      </div>
-    );
+        <div className="container">
+          <Action hasOptions={this.state.options.length} handlePick={this.handlePick} />
+          <Options options={this.state.options} handleDeleteAllOptions={this.handleDeleteAllOptions} handleDeleteOption={this.handleDeleteOption} />
+          <AddOption handleAddOption={this.handleAddOption} />
+        </div>
+        <OptionModal selectedOption={this.state.selectedOption} clearSelectedOption={this.clearSelectedOption} />
+      </div>;
   }
 }
 
