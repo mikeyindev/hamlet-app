@@ -22,6 +22,11 @@ module.exports = {
         test: /\.js$/,
         // Exclude node_modules directory
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        // Use lets you specify multiple loaders. sass-loader uses node-sass to convert CSS to SASS
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
