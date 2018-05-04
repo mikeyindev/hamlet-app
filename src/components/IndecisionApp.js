@@ -4,6 +4,7 @@ import Option from "./Option";
 import Action from "./Action";
 import Options from "./Options";
 import Header from "./Header";
+import OptionModal from './OptionModal';
 
 class IndecisionApp extends React.Component {
   constructor(props) {
@@ -11,13 +12,15 @@ class IndecisionApp extends React.Component {
     super(props);
     this.state = {
       // options: ["One", "Two", "Three"]
-      options: props.options
+      options: props.options,
+      selectedOption: undefined
     };
-    // Bind removeAll() to 'this' context, so when it's called in an event handler, the context won't be lost
-    this.handleDeleteAllOptions = this.handleDeleteAllOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
+    // Bind removeAll() to 'this' context, so when it's called in an event handler, the context won't be lost. They're not necessary when using arrow functions
+    // this.handleDeleteAllOptions = this.handleDeleteAllOptions.bind(this);
+    // this.handlePick = this.handlePick.bind(this);
+    // this.handleAddOption = this.handleAddOption.bind(this);
+    // this.handleDeleteOption = this.handleDeleteOption.bind(this);
+    // this.clearSelectedOption = this.clearSelectedOption.bind(this);
   }
 
   componentDidMount() {
@@ -44,7 +47,7 @@ class IndecisionApp extends React.Component {
     }
   }
 
-  handleDeleteAllOptions() {
+  handleDeleteAllOptions = () => {
     // this.setState(() => {
     //   return {
     //     options: []
@@ -53,13 +56,15 @@ class IndecisionApp extends React.Component {
     this.setState(() => ({ options: [] }));
   }
 
-  handlePick() {
+  handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    this.setState({
+      selectedOption: option
+    });
   }
 
-  handleAddOption(option) {
+  handleAddOption = (option) => {
     if (!option) {
       return "Enter valid value to add item.";
       // indexOf returns -1 if the item is not in the array
@@ -74,12 +79,12 @@ class IndecisionApp extends React.Component {
     // });
 
     // Using concat() returns a new array without changing either of the array we're concatenating
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       options: prevState.options.concat([option])
     }));
   }
 
-  handleDeleteOption(optionToRemove) {
+  handleDeleteOption = (optionToRemove) => {
     console.log(optionToRemove);
     // filter(), return true to keep the element, false to remove it. It returns a new array with only the elements that passed the test
     this.setState(prevState => ({
@@ -87,6 +92,12 @@ class IndecisionApp extends React.Component {
         return optionToRemove !== option;
       })
     }));
+  }
+
+  clearSelectedOption = () => {
+    this.setState({
+      selectedOption: undefined
+    });
   }
 
   render() {
@@ -106,6 +117,7 @@ class IndecisionApp extends React.Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
+        <OptionModal selectedOption={this.state.selectedOption} clearSelectedOption={this.clearSelectedOption}/>
       </div>
     );
   }
