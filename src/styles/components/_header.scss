@@ -1,0 +1,21 @@
+.header {
+  background: #9EEFE5;
+  color: #162521;
+  margin-bottom: 4.8rem;
+  padding: 1.6rem 0;
+}
+
+// Block element modifier (BEM) naming convention
+.header__title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header__subtitle {
+  // color: #3C474B;
+  color: #4F7CAC;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+}

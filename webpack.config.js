@@ -24,7 +24,8 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        // The '?' following 's' makes 's' optional, so webpack recognizes both CSS and SCSS files 
+        test: /\.s?css$/,
         // Use lets you specify multiple loaders. sass-loader uses node-sass to convert CSS to SASS
         use: ['style-loader', 'css-loader', 'sass-loader']
       }

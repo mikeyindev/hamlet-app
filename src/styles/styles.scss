@@ -1,5 +1,3 @@
-$brand-color: blue;
-
-* {
-  color: $brand-color;
-}
+// when importing SCSS partials, leave off underscore and extension
+@import './base/base';
+@import './components/header';
