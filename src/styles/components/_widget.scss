@@ -1,0 +1,28 @@
+// Widget header
+.widget {
+  background: $anti-flash-white;
+  border-radius: 15px;
+  margin-bottom: $l-size;
+  // border-bottom: .3rem solid darken($anti-flash-white, 10%);
+}
+
+.widget-header {
+  border-radius: 15px 15px 0 0;
+  background: #D5DEDE;
+  color: $dark-jungle-green;
+  padding: $s-size;
+  display: flex;
+  justify-content: space-between;
+}
+
+.widget-header__h3 {
+  margin: 0;
+}
+
+.widget__message {
+  text-align: center;
+  color: $dark-jungle-green;
+  margin: 0;
+  padding: $l-size;
+  border-bottom: .2rem solid darken($anti-flash-white, 10%);
+}

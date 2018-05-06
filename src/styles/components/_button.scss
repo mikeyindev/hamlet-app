@@ -1,0 +1,55 @@
+// Styling for the "What should I do" button
+.big-button {
+  background: $sunny;
+  border: none;
+  // Darken the bottom border by 10%
+  border-bottom: .6rem solid darken($sunny, 10%);
+  color: $dark-jungle-green;
+  font-weight: bold;
+  font-size: $l-size;
+  width: 100%;
+  margin-bottom: $xl-size;
+  padding: 2.4rem;
+}
+
+.big-button:disabled {
+  opacity: .5;
+}
+
+.big-button:hover {
+  background: darken($sunny, 10%);
+}
+
+// Styling for "Add Option" button
+.button {
+  background: $sunny;
+  border: none;
+  border-bottom: .3rem solid darken($sunny, 10%);
+  color: $dark-jungle-green;
+  font-weight: 500;
+  padding: $s-size;
+}
+
+.button:hover {
+  background: darken($sunny, 10%);
+}
+
+// Remove button
+.button--link {
+  background: none;
+  border: none;
+  color: $link-color;
+  text-decoration: underline;
+  padding: 0;
+  cursor: pointer;
+}
+
+.button--link:hover {
+  font-weight: bolder;
+}
+
+@media(max-width: $desktop-breakpoint) {
+  .big-button {
+    margin-bottom: $m-size;
+  }
+}

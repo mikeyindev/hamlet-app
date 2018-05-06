@@ -1,0 +1,5 @@
+.container {
+  max-width: 60rem; // The container will be 60rem wide
+  margin: 0 auto; // The left/right margin will be distributed equally
+  padding: 0 $m-size;
+}

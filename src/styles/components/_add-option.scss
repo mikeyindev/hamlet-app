@@ -1,0 +1,33 @@
+.add-option {
+  display: flex;
+  flex-direction: row; // Stack things horizontally
+  padding: $m-size;
+}
+
+.add-option-error {
+  color: $dark-jungle-green;
+  font-style: italic;
+  margin: $m-size 0 0 0;
+  padding: 0 $m-size;
+}
+
+.add-option__input {
+  flex-grow: 1;
+  margin-right: $s-size;
+  padding: $s-size;
+  border: none;
+  border-radius: 15px;
+  border-bottom: 1px solid
+}
+
+// CSS media query used to modify site based on  device type. These settings are
+// applied when screen size <= 45 rem, i.e. mobile phones
+@media (max-width: $desktop-breakpoint) {
+  .add-option {
+    flex-direction: column; // "column" stacks items vertically
+  }
+
+  .add-option__input {
+    margin: 0 0 $s-size;
+  }
+}
