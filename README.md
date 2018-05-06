@@ -1,7 +1,7 @@
 # Indecision App
 
-[Mobile Screenshot](/screenshots/Mobile_Screenshot)
-[Desktop Screenshot](/screenshots/Desktop_Screenshot)
+![Mobile Screenshot](./screenshots/Mobile_Screenshot.png)
+![Desktop Screenshot](./screenshots/Desktop_Screenshot.png)
 
 This project uses React to build a to-do list client-side app. User entered tasks are stored in the browser's LocalStorage.
 
