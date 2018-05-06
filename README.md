@@ -1,5 +1,8 @@
 # Indecision App
 
+[Mobile Screenshot](/screenshots/Mobile_Screenshot)
+[Desktop Screenshot](/screenshots/Desktop_Screenshot)
+
 This project uses React to build a to-do list client-side app. User entered tasks are stored in the browser's LocalStorage.
 
 Babel configurations can be found in `.babelrc`
