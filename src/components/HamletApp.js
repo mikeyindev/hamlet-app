@@ -6,7 +6,7 @@ import Options from "./Options";
 import Header from "./Header";
 import OptionModal from './OptionModal';
 
-class IndecisionApp extends React.Component {
+class HamletApp extends React.Component {
   constructor(props) {
     // The props object here is the same as this.props
     super(props);
@@ -103,7 +103,7 @@ class IndecisionApp extends React.Component {
   render() {
     const subtitle = "Put your life in the hands of a computer";
 
-    // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. IndecisionApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
+    // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. HamletApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
     return <div>
         <Header />
         <div className="container">
@@ -118,8 +118,8 @@ class IndecisionApp extends React.Component {
   }
 }
 
-IndecisionApp.defaultProps = {
+HamletApp.defaultProps = {
   options: []
 };
 
-export default IndecisionApp;
+export default HamletApp;

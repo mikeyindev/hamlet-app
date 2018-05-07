@@ -12,7 +12,7 @@ const Header = props => {
 };
 
 Header.defaultProps = {
-  title: "Indecision App",
+  title: "Hamlet App",
   subtitle: "Put your life in the hands of a machine"
 };
 

@@ -1,4 +1,6 @@
-# Indecision App
+# Hamlet App
+
+## Put your fate in the hands of a machine.
 
 Mobile version
 
