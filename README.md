@@ -44,9 +44,9 @@ Webpack configurations can be found in `webpack.config.js`.
 
 [css-loader](https://github.com/webpack-contrib/css-loader) - Resolves `@import` statements like `import/require()`.
 
-[node-sass](https://github.com/sass/node-sass) - Privdes Node binding to LibSass, the CSS preprocessor written in C.
+[node-sass](https://github.com/sass/node-sass) - Provides Node binding to LibSass, the CSS preprocessor written in C. 
 
-[sass-loader](https://github.com/webpack-contrib/sass-loader) - Compiles SASS into CSS using `node-sass`.
+[sass-loader](https://github.com/webpack-contrib/sass-loader) - Compiles SASS into CSS using `node-sass`. Requires `node-sass` and `webpack` as peer dependencies.
 
 [style-loader](https://github.com/webpack-contrib/style-loader) - Adds CSS to DOM by injecting <style> tag to index.html.
 
