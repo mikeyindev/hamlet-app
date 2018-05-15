@@ -50,5 +50,19 @@ Webpack configurations can be found in `webpack.config.js`.
 
 [style-loader](https://github.com/webpack-contrib/style-loader) - Adds CSS to DOM by injecting <style> tag to index.html.
 
+# Storybook Addons
+
+[Storybook](https://storybook.js.org/basics/guide-react/)
+
+[Storysource](https://github.com/storybooks/storybook/blob/master/addons/storysource/README.md)
+
+[Actions](https://github.com/storybooks/storybook/tree/master/addons/actions)
+
+[Notes](https://github.com/storybooks/storybook/tree/master/addons/notes)
+
 ## Instructions
-`npm run dev-server` to run `webpack-dev-server`.
+`npm run dev-server` to run `webpack-dev-server`, visit `localhost:8080`.
+
+Do `yarn install` if you want Storybook to run properly.
+
+`yarn run storybook` to start Storybook, visit `localhost:9001`.
