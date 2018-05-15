@@ -6,7 +6,7 @@ setOptions({
   name: 'Hamlet App'
 });
 
-const req = require.context("../src", true, /.stories.js$/);
+const req = require.context("../stories", true, /.stories.js$/);
 
 const loadStories = () => {
   // require('../stories/Action.stories.js');
