@@ -1,9 +1,10 @@
 import { configure } from '@storybook/react';
+import { setOptions } from "@storybook/addon-options";
 import '../src/styles/styles.scss';
 
-const loadStories = () => {
-  require('../stories/Action.stories.js');
-  require('../stories/AddOption.stories.js');
-}
+// Change name of Storybook to 'Hamlet App'
+setOptions({
+  name: 'Hamlet App'
+});
 
-configure(loadStories, module);
+configure(() => require('./stories'), module);

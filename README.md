@@ -60,6 +60,8 @@ Webpack configurations can be found in `webpack.config.js`.
 
 [Notes](https://github.com/storybooks/storybook/tree/master/addons/notes)
 
+[Options](https://github.com/storybooks/storybook/tree/master/addons/options)
+
 ## Instructions
 `npm run dev-server` to run `webpack-dev-server`, visit `localhost:8080`.
 
