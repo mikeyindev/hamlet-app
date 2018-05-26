@@ -1,5 +1,4 @@
 # Hamlet App
-
 ## Put your fate in the hands of a machine.
 
 Mobile version
@@ -15,6 +14,7 @@ This project uses React to build a to-do list client-side app. User entered task
 Babel configurations can be found in `.babelrc`
 
 Webpack configurations can be found in `webpack.config.js`.
+
 
 # Dependencies
 
@@ -40,6 +40,7 @@ Webpack configurations can be found in `webpack.config.js`.
 
 [Webpack DevServer](https://webpack.js.org/configuration/dev-server/) - A developvement server using Webpack that provides live reloading.
 
+
 # Webpack Plugins
 [babel-loader]()
 
@@ -47,11 +48,12 @@ Webpack configurations can be found in `webpack.config.js`.
 
 [css-loader](https://github.com/webpack-contrib/css-loader) - Resolves `@import` statements like `import/require()`.
 
+[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) - Used to extract CSS from bundle into a separate CSS file.
+
 [node-sass](https://github.com/sass/node-sass) - Provides Node binding to LibSass, the CSS preprocessor written in C. 
 
 [sass-loader](https://github.com/webpack-contrib/sass-loader) - Compiles SASS into CSS using `node-sass`. Requires `node-sass` and `webpack` as peer dependencies.
 
-[style-loader](https://github.com/webpack-contrib/style-loader) - Adds CSS to DOM by injecting <style> tag to index.html.
 
 # Storybook Addons
 
@@ -67,6 +69,9 @@ Webpack configurations can be found in `webpack.config.js`.
 
 ## Instructions
 `npm run dev-server` to run `webpack-dev-server`, visit `localhost:8080`.
+
+`npm run build:prod` to run production build.
+`npm run build:dev` to run development build.
 
 Do `yarn install` if you want Storybook to run properly.
 
