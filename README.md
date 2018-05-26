@@ -17,13 +17,6 @@ Babel configurations can be found in `.babelrc`
 Webpack configurations can be found in `webpack.config.js`.
 
 # Dependencies
-[React](https://reactjs.org/) - Webpack plugin for Babel.
-
-[ReactDOM](https://reactjs.org/docs/react-dom.html) - Provides DOM-specific methods and renders React components.
-
-[react-modal](https://github.com/reactjs/react-modal) - Accessible modal dialog component for React.
-
-[normalize.css](http://necolas.github.io/normalize.css/) - Renders elements consistently across browsers.
 
 [Babel](https://babeljs.io/) - JavaScript transpiler that converts ES6 to plain vanilla JavaScript.
 
@@ -32,6 +25,16 @@ Webpack configurations can be found in `webpack.config.js`.
 [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env) - Babel preset that transforms ES2015+ down to ES5. Automatically determines the Babel plugins and polyfills you need based on targeted browser or runtime.
 
 [babel-preset-react](https://babeljs.io/docs/plugins/preset-react/) - Babel preset that transforms JSX into createElement calls.
+
+[Express](https://expressjs.com/) - Minimal Node.js framework.
+
+[normalize.css](http://necolas.github.io/normalize.css/) - Renders elements consistently across browsers.
+
+[React](https://reactjs.org/) - Webpack plugin for Babel.
+
+[ReactDOM](https://reactjs.org/docs/react-dom.html) - Provides DOM-specific methods and renders React components.
+
+[react-modal](https://github.com/reactjs/react-modal) - Accessible modal dialog component for React.
 
 [Webpack](https://webpack.js.org/concepts/) - JavaScript module bundler and task runner. Can also be used to transform and package just about any asset. Emits a single file `bundle.js`.
 
