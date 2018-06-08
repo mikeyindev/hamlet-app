@@ -1,4 +1,5 @@
 .idea
+dist
 node_modules
 *.log
 
@@ -7,4 +8,4 @@ bundle.js
 styles.css
 
 # Source map files
-*.map
+# *.map

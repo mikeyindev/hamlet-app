@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
-console.log(path.join(__dirname, 'public'));
+// console.log(path.join(__dirname, 'public'));
 // Find out the absolute path of the project then concatenate it with
 // path.join(), a node function. The output path in webpack.config requires an
 // absolute path console.log(__dirname);
@@ -15,7 +15,7 @@ module.exports = (env) => {
     // entry: "./src/app.js",
     entry: "./src/app.js",
     output: {
-      path: path.join(__dirname, "public"),
+      path: path.join(__dirname, 'public', 'dist'),
       filename: "bundle.js"
     },
     plugins: [
@@ -65,7 +65,9 @@ module.exports = (env) => {
       // Ask server to fallback to index.html when a resource can't be found.
       // We're returning index.html for all routes since we're doing client-side
       // routing
-      historyApiFallback: true
+      historyApiFallback: true,
+      // The default is the public directory
+      publicPath: '/dist/'
     }
   }
 };
