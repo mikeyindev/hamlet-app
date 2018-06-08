@@ -1,6 +1,8 @@
 # Hamlet App
 ## Put your fate in the hands of a machine.
 
+**Click [here](https://hamlet-app.herokuapp.com/) to see the app in action!**
+
 Mobile version
 
 <img src="./screenshots/Mobile_Screenshot.png" width=500>
