@@ -5,10 +5,23 @@
   border-bottom: .2rem solid darken($anti-flash-white, 10%);
 }
 
+.option__wrapper {
+  display: flex;
+}
+
 .option__text {
   color: $dark-jungle-green;
   font-weight: 500;
   font-size: 2rem;
   margin: 0;
   word-break: break-all;
+}
+
+.option__checkbox {
+  margin: 0 $s-size 0 0;
+  zoom: 200%; // Make checkbox larger, transform blurs the checkbox
+}
+
+.option__checkbox:checked + p {
+  text-decoration: line-through;
 }
