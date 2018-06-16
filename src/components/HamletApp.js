@@ -14,7 +14,8 @@ class HamletApp extends React.Component {
     this.state = {
       // options: ["One", "Two", "Three"]
       options: props.options,
-      selectedOption: undefined
+      selectedOption: undefined,
+      isPlaying: true
     };
     // Bind removeAll() to 'this' context, so when it's called in an event handler, the context won't be lost. They're not necessary when using arrow functions
     // this.handleDeleteAllOptions = this.handleDeleteAllOptions.bind(this);
@@ -103,8 +104,17 @@ class HamletApp extends React.Component {
 
   handlePlayMusic = () => {
     const music = document.getElementById('music');
-    music.play();
-    music.loop = true;
+    this.setState({
+      isPlaying: !this.state.isPlaying
+    });
+    console.log(this.state.isPlaying);
+
+    if (this.state.isPlaying) { 
+      music.play(); 
+      music.loop = true;
+    } else {
+      music.pause();
+    }
   }
 
   render() {
@@ -113,7 +123,7 @@ class HamletApp extends React.Component {
     // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. HamletApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
     return <div>
         <Header />
-        <MusicPlayer handlePlayMusic={this.handlePlayMusic} />
+        <MusicPlayer handlePlayMusic={this.handlePlayMusic} isPlaying={this.state.isPlaying} />
         <div className="container">
           <Action hasOptions={this.state.options.length} handlePick={this.handlePick} />
           <div className="widget">
