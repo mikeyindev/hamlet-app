@@ -48,6 +48,10 @@
   font-weight: bolder;
 }
 
+.button--link.button__play {
+  font-size: 2rem;
+}
+
 @media(max-width: $desktop-breakpoint) {
   .big-button {
     margin-bottom: $m-size;

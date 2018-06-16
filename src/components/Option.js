@@ -4,7 +4,7 @@ const Option = (props) => {
   return (
     <div className="option">
       <div className="option__wrapper">
-        <input className="option__checkbox" type="checkbox" />
+        <input className="option--checkbox" type="checkbox" />
         <p className="option__text">
           {props.count}. {props.optionText}
         </p>

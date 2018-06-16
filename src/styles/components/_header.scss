@@ -3,6 +3,8 @@
   color: $dark-jungle-green;
   margin-bottom: $xl-size;
   padding: 1.6rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 // Block element modifier (BEM) naming convention

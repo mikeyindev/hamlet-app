@@ -5,6 +5,7 @@ import Action from "./Action";
 import Options from "./Options";
 import Header from "./Header";
 import OptionModal from './OptionModal';
+import MusicPlayer from './MusicPlayer';
 
 class HamletApp extends React.Component {
   constructor(props) {
@@ -100,12 +101,19 @@ class HamletApp extends React.Component {
     });
   }
 
+  handlePlayMusic = () => {
+    const music = document.getElementById('music');
+    music.play();
+    music.loop = true;
+  }
+
   render() {
     const subtitle = "Put your life in the hands of a computer";
 
     // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. HamletApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
     return <div>
         <Header />
+        <MusicPlayer handlePlayMusic={this.handlePlayMusic} />
         <div className="container">
           <Action hasOptions={this.state.options.length} handlePick={this.handlePick} />
           <div className="widget">
