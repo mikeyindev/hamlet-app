@@ -17,7 +17,7 @@ const Options = props => {
           handleDeleteOption={props.handleDeleteOption}
         />
       ))}
-      {props.options.length === 0 && <p className="widget__message">Please add a message to get started!</p>}
+      {props.options.length === 0 && <p className="widget__message">Please add a task to get started :)</p>}
     </div>;
 };
 
