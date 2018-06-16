@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MusicPlayer = (props) => {
-  const buttonText = props.isPlaying ? 'Play music!' : 'Pause music';
+  const buttonText = props.isPlaying ? 'Pause music' : 'Play music!';
 
   return (
     <div className="music-player">

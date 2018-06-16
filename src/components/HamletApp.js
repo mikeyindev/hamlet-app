@@ -15,7 +15,7 @@ class HamletApp extends React.Component {
       // options: ["One", "Two", "Three"]
       options: props.options,
       selectedOption: undefined,
-      isPlaying: true
+      isPlaying: false
     };
     // Bind removeAll() to 'this' context, so when it's called in an event handler, the context won't be lost. They're not necessary when using arrow functions
     // this.handleDeleteAllOptions = this.handleDeleteAllOptions.bind(this);
@@ -104,18 +104,21 @@ class HamletApp extends React.Component {
 
   handlePlayMusic = () => {
     const music = document.getElementById('music');
-    this.setState({
-      isPlaying: !this.state.isPlaying
-    });
-    console.log(this.state.isPlaying);
 
-    if (this.state.isPlaying) { 
-      music.play(); 
-      music.loop = true;
-    } else {
-      music.pause();
-    }
-  }
+    // Passing in a callback because this.setState() does not immediately mutate
+    // the state
+    this.setState((prevState) => ({
+      isPlaying: !prevState.isPlaying
+    }), () => {
+      console.log(this.state.isPlaying);
+      if (this.state.isPlaying) { 
+        music.play(); 
+        music.loop = true;
+      } else {
+        music.pause();
+      }
+    });
+  };
 
   render() {
     const subtitle = "Put your life in the hands of a computer";
