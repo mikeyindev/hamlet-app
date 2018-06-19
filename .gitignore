@@ -1,11 +1,11 @@
 .idea
-dist
 node_modules
-*.log
+dist
+src/.DS_Store
 
-# These files are emitted by Webpack during builds
-bundle.js
-styles.css
+*.log
+# Environment variable files that store API keys
+.env.*
 
 # Source map files
-# *.map
+*.map

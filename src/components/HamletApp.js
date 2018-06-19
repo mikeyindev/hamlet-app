@@ -6,6 +6,7 @@ import Options from "./Options";
 import Header from "./Header";
 import OptionModal from './OptionModal';
 import MusicPlayer from './MusicPlayer';
+import database from '../../Firebase/firebase';
 
 class HamletApp extends React.Component {
   constructor(props) {
@@ -27,25 +28,39 @@ class HamletApp extends React.Component {
 
   componentDidMount() {
     // In case the JSON object passed to JSON.parse() is invalid JSON
-    try {
-      const json = localStorage.getItem("options");
-      const options = JSON.parse(json);
-      if (options) {
-        // this.setState(() => {
-        //   return { options: options }
-        // });
-        this.setState(() => ({ options }));
-      }
-    } catch (e) {
-      // Do nothing if it's invalid JSON
-    }
+    // try {
+    //   const json = localStorage.getItem("options");
+    //   const options = JSON.parse(json);
+    //   if (options) {
+    //     // this.setState(() => {
+    //     //   return { options: options }
+    //     // });
+    //     this.setState(() => ({ options }));
+    //   }
+    // } catch (e) {
+    //   // Do nothing if it's invalid JSON
+    // }
+    const options = [];
+    database.ref('options')
+      .once('value')
+      .then((snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+          console.log(childSnapshot.val());
+          options.push(childSnapshot.val());
+          this.setState({ options });
+        });
+      });
+      // .then(() => {
+      //   this.setState({ options });
+      // });
   }
 
   componentDidUpdate(prevState) {
     if (prevState.options.length !== this.state.options.length) {
-      const json = JSON.stringify(this.state.options);
-      // Store our data in localStorage, giving it the key 'options'
-      localStorage.setItem("options", json);
+      // const json = JSON.stringify(this.state.options);
+      // // Store our data in localStorage, giving it the key 'options'
+      // localStorage.setItem("options", json);
+      database.ref('options').set(this.state.options);
     }
   }
 
@@ -55,7 +70,7 @@ class HamletApp extends React.Component {
     //     options: []
     //   };
     // });
-    this.setState(() => ({ options: [] }));
+    this.setState({ options: [] });
   }
 
   handlePick = () => {
