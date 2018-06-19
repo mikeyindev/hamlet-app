@@ -56,12 +56,12 @@ class HamletApp extends React.Component {
   }
 
   componentDidUpdate(prevState) {
-    if (prevState.options.length !== this.state.options.length) {
-      // const json = JSON.stringify(this.state.options);
-      // // Store our data in localStorage, giving it the key 'options'
-      // localStorage.setItem("options", json);
-      database.ref('options').set(this.state.options);
-    }
+    // if (prevState.options.length !== this.state.options.length) {
+    //   const json = JSON.stringify(this.state.options);
+    //   // Store our data in localStorage, giving it the key 'options'
+    //   localStorage.setItem("options", json);
+    // }
+    database.ref('options').set(this.state.options);
   }
 
   handleDeleteAllOptions = () => {
