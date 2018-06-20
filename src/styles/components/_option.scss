@@ -5,7 +5,7 @@
   border-bottom: .2rem solid darken($anti-flash-white, 10%);
 }
 
-.option__wrapper {
+.option-wrapper {
   display: flex;
 }
 
@@ -17,7 +17,7 @@
   word-break: break-all;
 }
 
-.option--checkbox {
+.option__checkbox {
   margin: 0 $s-size 0 0;
   zoom: 200%; // Make checkbox larger, transform blurs the checkbox
 }

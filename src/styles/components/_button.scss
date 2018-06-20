@@ -35,7 +35,7 @@
 }
 
 // Remove button
-.button--link {
+.button__link {
   background: none;
   border: none;
   color: $link-color;
@@ -44,12 +44,18 @@
   cursor: pointer;
 }
 
-.button--link:hover {
+.button__link:hover {
   font-weight: bolder;
 }
 
-.button--link.button__play {
-  font-size: 2rem;
+// Play music button
+// .button--link.button__play {
+//   font-size: $m-size;
+// }
+
+// Menu bar buttons
+.button--menu {
+  font-size: 2.0rem;
 }
 
 @media(max-width: $desktop-breakpoint) {

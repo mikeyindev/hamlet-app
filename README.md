@@ -11,7 +11,7 @@ Desktop version
 
 <img src="./screenshots/Desktop_Screenshot.png" width=500>
 
-This project uses React to build a to-do list client-side app. User entered tasks are stored in the browser's LocalStorage.
+This project uses React and Firebase to build a to-do list client-side app. User entered tasks are stored in the browser's LocalStorage.
 
 Babel configurations can be found in `.babelrc`
 
@@ -28,7 +28,13 @@ Webpack configurations can be found in `webpack.config.js`.
 
 [babel-preset-react](https://babeljs.io/docs/plugins/preset-react/) - Babel preset that transforms JSX into createElement calls.
 
+[cross-env](https://github.com/kentcdodds/cross-env) - Cross-operating system environment scripts. Windows command prompts can't parse `NODE_ENV=production` due to a difference between how Windows and POSIX handle `env` variables.
+
+[dotenv](https://github.com/motdotla/dotenv) = Loads environment variables from `.env` file into `process.env`. This allows storing environment configurations separate from the code.
+
 [Express](https://expressjs.com/) - Minimal Node.js framework.
+
+[Firebase](https://firebase.google.com/) - Real-time NoSQL database that lets you store and sync JSON data in real-time between users. 
 
 [normalize.css](http://necolas.github.io/normalize.css/) - Renders elements consistently across browsers.
 
