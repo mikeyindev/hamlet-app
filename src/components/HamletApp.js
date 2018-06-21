@@ -27,7 +27,7 @@ class HamletApp extends React.Component {
     // this.handleAddOption = this.handleAddOption.bind(this);
     // this.handleDeleteOption = this.handleDeleteOption.bind(this);
     // this.clearSelectedOption = this.clearSelectedOption.bind(this);
-
+  
   componentDidMount() {
     // In case the JSON object passed to JSON.parse() is invalid JSON
     // try {
@@ -43,35 +43,33 @@ class HamletApp extends React.Component {
     //   // Do nothing if it's invalid JSON
     // }
 
-    const setOptions = () => {
-      const options = [];
-      database.ref('options')
-        .once('value')
-        .then((snapshot) => {
-          snapshot.forEach((childSnapshot) => {
-            console.log(childSnapshot.val());
-            options.push(childSnapshot.val());
-            this.setState({ options });
-          });
-        });
-    };
-
     firebase.auth().onAuthStateChanged((user) => {
       // If user is logged in, retrieve data from Firebase
       if (user) {
-        this.setState({ uid: user.uid });
-        setOptions();
+        const uid = user.uid
+        this.setState({ uid }, () => {
+          console.log(this.state.uid);
+          const options = [];
+          database.ref(`users/${uid}/options`)
+            .once('value')
+            .then((snapshot) => {
+              snapshot.forEach((childSnapshot) => {
+                console.log(childSnapshot.val());
+                options.push(childSnapshot.val());
+                this.setState({ options });
+              });
+            });
+        });
       }
     });
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate() {
     // if (prevState.options.length !== this.state.options.length) {
     //   const json = JSON.stringify(this.state.options);
     //   // Store our data in localStorage, giving it the key 'options'
     //   localStorage.setItem("options", json);
     // }
-    database.ref('options').set(this.state.options);
   }
 
   handleDeleteAllOptions = () => {
@@ -80,7 +78,12 @@ class HamletApp extends React.Component {
     //     options: []
     //   };
     // });
-    this.setState({ options: [] });
+    this.setState({ options: [] }, () => {
+      const uid = this.state.uid;
+      if (uid) {
+        database.ref(`users/${uid}/options`).remove();
+      }
+    });
   }
 
   handlePick = () => {
@@ -104,11 +107,21 @@ class HamletApp extends React.Component {
     //     options: prevState.options.concat([option])
     //   };
     // });
-
+    
     // Using concat() returns a new array without changing either of the array we're concatenating
     this.setState((prevState) => ({
       options: prevState.options.concat([option])
-    }));
+    }), () => {
+      const uid = this.state.uid;
+      if (uid) {
+        return database
+          .ref(`users/${uid}/options`)
+          .push(option)
+          .then((snapshot) => {
+            this.setState()
+          });
+      }
+    });
   }
 
   handleDeleteOption = (optionToRemove) => {
@@ -118,7 +131,15 @@ class HamletApp extends React.Component {
       options: prevState.options.filter(option => {
         return optionToRemove !== option;
       })
-    }));
+    }), () => {
+      const uid = this.state.uid;
+      if (uid) {
+        database.ref(`users/${uid}/options`).orderByValue().equalTo(optionToRemove).once('value', (snapshot) => {
+            console.log(snapshot.val());
+            snapshot.forEach((child => child.ref.remove()));
+        });
+      }
+    });
   }
 
   clearSelectedOption = () => {
@@ -159,7 +180,7 @@ class HamletApp extends React.Component {
 
   render() {
     const subtitle = "Put your life in the hands of a computer";
-    console.log(this.state);
+    // console.log(this.state);
 
     // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. HamletApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
     return <div>
