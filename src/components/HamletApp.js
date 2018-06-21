@@ -54,8 +54,13 @@ class HamletApp extends React.Component {
             .once('value')
             .then((snapshot) => {
               snapshot.forEach((childSnapshot) => {
-                console.log(childSnapshot.val());
-                options.push(childSnapshot.val());
+                // console.log(childSnapshot.val());
+                // options.push(childSnapshot.val());
+                const option = {
+                  id: childSnapshot.key,
+                  text: childSnapshot.val()
+                };
+                options.push(option);
                 this.setState({ options });
               });
             });
@@ -94,11 +99,11 @@ class HamletApp extends React.Component {
     });
   }
 
-  handleAddOption = (option) => {
-    if (!option) {
+  handleAddOption = (optionToAdd) => {
+    if (!optionToAdd) {
       return "Enter valid value to add item.";
       // indexOf returns -1 if the item is not in the array
-    } else if (this.state.options.indexOf(option) > -1) {
+    } else if (this.state.options.indexOf(optionToAdd) > -1) {
       return "The item has already been added.";
     }
 
@@ -107,37 +112,36 @@ class HamletApp extends React.Component {
     //     options: prevState.options.concat([option])
     //   };
     // });
-    
-    // Using concat() returns a new array without changing either of the array we're concatenating
-    this.setState((prevState) => ({
-      options: prevState.options.concat([option])
-    }), () => {
-      const uid = this.state.uid;
-      if (uid) {
-        return database
-          .ref(`users/${uid}/options`)
-          .push(option)
-          .then((snapshot) => {
-            this.setState()
-          });
-      }
-    });
+    const uid = this.state.uid;
+    if (uid) {
+      database
+        .ref(`users/${uid}/options`)
+        .push(optionToAdd)
+        .then((snapshot) => {
+          const option = {
+            id: snapshot.key,
+            text: optionToAdd
+          };
+          this.setState((prevState) => ({
+            // Using concat() returns a new array without changing either of the
+            // array we're concatenating
+            options: prevState.options.concat([option])
+          }));
+        });
+    }
   }
 
-  handleDeleteOption = (optionToRemove) => {
-    console.log(optionToRemove);
+  handleDeleteOption = (id) => {
+    console.log(id);
     // filter(), return true to keep the element, false to remove it. It returns a new array with only the elements that passed the test
     this.setState(prevState => ({
       options: prevState.options.filter(option => {
-        return optionToRemove !== option;
+        return id !== option.id;
       })
     }), () => {
       const uid = this.state.uid;
       if (uid) {
-        database.ref(`users/${uid}/options`).orderByValue().equalTo(optionToRemove).once('value', (snapshot) => {
-            console.log(snapshot.val());
-            snapshot.forEach((child => child.ref.remove()));
-        });
+        database.ref(`users/${uid}/options/${id}`).remove();
       }
     });
   }

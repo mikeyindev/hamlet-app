@@ -6,10 +6,10 @@ const Option = (props) => {
       <div className="option-wrapper">
         <input className="option__checkbox" type="checkbox" />
         <p className="option__text">
-          {props.count}. {props.optionText}
+          {props.count}. {props.option.text}
         </p>
       </div>
-      <button className="button__link" onClick={() => props.handleDeleteOption(props.optionText)}>
+      <button className="button__link" onClick={() => props.handleDeleteOption(props.option.id)}>
         Remove
       </button>
     </div>

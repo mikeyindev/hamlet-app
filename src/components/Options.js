@@ -2,6 +2,7 @@ import React from 'react';
 import Option from './Option';
 
 const Options = props => {
+  console.log(props.options);
   return <div>
       <div className="widget-header">
         <h3 className="widget-header__h3">Your Options</h3>
@@ -11,8 +12,9 @@ const Options = props => {
       </div>
       {props.options.map((option, index) => (
         <Option
-          key={option}
-          optionText={option}
+          key={option.id}
+          option={option}
+          // optionText={option.text}
           count={index + 1}
           handleDeleteOption={props.handleDeleteOption}
         />
