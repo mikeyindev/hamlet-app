@@ -5,8 +5,9 @@ import Options from "./Options";
 import Header from "./Header";
 import OptionModal from './OptionModal';
 import MusicPlayer from './MusicPlayer';
-import database from '../../Firebase/firebase';
+import { database, firebase, googleAuthProvider } from '../../Firebase/firebase';
 import MenuBar from './MenuBar';
+import Login from './Login';
 
 class HamletApp extends React.Component {
   constructor(props) {
@@ -16,15 +17,16 @@ class HamletApp extends React.Component {
       // options: ["One", "Two", "Three"]
       options: props.options,
       selectedOption: undefined,
+      uid: undefined,
       isPlaying: false
     };
+  }
     // Bind removeAll() to 'this' context, so when it's called in an event handler, the context won't be lost. They're not necessary when using arrow functions
     // this.handleDeleteAllOptions = this.handleDeleteAllOptions.bind(this);
     // this.handlePick = this.handlePick.bind(this);
     // this.handleAddOption = this.handleAddOption.bind(this);
     // this.handleDeleteOption = this.handleDeleteOption.bind(this);
     // this.clearSelectedOption = this.clearSelectedOption.bind(this);
-  }
 
   componentDidMount() {
     // In case the JSON object passed to JSON.parse() is invalid JSON
@@ -40,19 +42,27 @@ class HamletApp extends React.Component {
     // } catch (e) {
     //   // Do nothing if it's invalid JSON
     // }
-    const options = [];
-    database.ref('options')
-      .once('value')
-      .then((snapshot) => {
-        snapshot.forEach((childSnapshot) => {
-          console.log(childSnapshot.val());
-          options.push(childSnapshot.val());
-          this.setState({ options });
+
+    const setOptions = () => {
+      const options = [];
+      database.ref('options')
+        .once('value')
+        .then((snapshot) => {
+          snapshot.forEach((childSnapshot) => {
+            console.log(childSnapshot.val());
+            options.push(childSnapshot.val());
+            this.setState({ options });
+          });
         });
-      });
-      // .then(() => {
-      //   this.setState({ options });
-      // });
+    };
+
+    firebase.auth().onAuthStateChanged((user) => {
+      // If user is logged in, retrieve data from Firebase
+      if (user) {
+        this.setState({ uid: user.uid });
+        setOptions();
+      }
+    });
   }
 
   componentDidUpdate(prevState) {
@@ -135,13 +145,30 @@ class HamletApp extends React.Component {
     });
   };
 
+  handleLogin = () => {
+    firebase.auth().signInWithPopup(googleAuthProvider);
+
+    console.log('Logged in');
+  }
+
+  handleLogout = () => {
+    firebase.auth().signOut();
+    this.setState({ uid: undefined });
+    console.log('Logged out');
+  }
+
   render() {
     const subtitle = "Put your life in the hands of a computer";
+    console.log(this.state);
 
     // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. HamletApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
     return <div>
         <Header />
         <MenuBar>
+          <Login handleLogin={this.handleLogin} 
+            handleLogout={this.handleLogout}
+            isLoggedIn={!!this.state.uid}
+          />
           <MusicPlayer handlePlayMusic={this.handlePlayMusic} isPlaying={this.state.isPlaying} />
         </MenuBar>
         <div className="container">

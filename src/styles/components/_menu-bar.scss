@@ -1,7 +1,6 @@
 .menu-bar {
   background: $anti-flash-white;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-bottom: $s-size;
 }

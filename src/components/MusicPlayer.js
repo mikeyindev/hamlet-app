@@ -5,7 +5,7 @@ const MusicPlayer = (props) => {
 
   return <div className="music-player">
       <audio id="music" src="/music/Jahzzar_-_05_-_Siesta.mp3" />
-      <button className="button__link button--menu button--play" onClick={props.handlePlayMusic}>
+      <button className="button__link button--menu button--play-music" onClick={props.handlePlayMusic}>
         {buttonText}
       </button>
     </div>;
