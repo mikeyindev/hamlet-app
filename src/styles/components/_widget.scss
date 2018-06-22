@@ -10,9 +10,9 @@
   border-radius: 15px 15px 0 0;
   background: #D5DEDE;
   color: $dark-jungle-green;
-  padding: $s-size;
   display: flex;
   justify-content: space-between;
+  padding: $s-size;
 }
 
 .widget-header__h3 {
@@ -20,9 +20,9 @@
 }
 
 .widget-message {
-  text-align: center;
+  border-bottom: .2rem solid darken($anti-flash-white, 10%);
   color: $dark-jungle-green;
   margin: 0;
   padding: $l-size;
-  border-bottom: .2rem solid darken($anti-flash-white, 10%);
+  text-align: center;
 }

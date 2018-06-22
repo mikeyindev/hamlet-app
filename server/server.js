@@ -1,6 +1,6 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+const path = require('path');
 const publicPath = path.join(__dirname, '..', 'public');
 // To get Heroku's dynamically assigned port. If no port is assigned, default to
 // 3000

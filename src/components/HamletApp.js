@@ -1,13 +1,13 @@
 import React from "react";
-import AddOption from "./AddOption";
-import Action from "./Action";
-import Options from "./Options";
-import Header from "./Header";
-import OptionModal from './OptionModal';
-import MusicPlayer from './MusicPlayer';
 import { database, firebase, googleAuthProvider } from '../../Firebase/firebase';
-import MenuBar from './MenuBar';
+import Action from "./Action";
+import AddOption from "./AddOption";
+import Header from "./Header";
 import Login from './Login';
+import MenuBar from './MenuBar';
+import MusicPlayer from './MusicPlayer';
+import Options from "./Options";
+import OptionModal from './OptionModal';
 
 class HamletApp extends React.Component {
   constructor(props) {
@@ -69,13 +69,13 @@ class HamletApp extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    // if (prevState.options.length !== this.state.options.length) {
-    //   const json = JSON.stringify(this.state.options);
-    //   // Store our data in localStorage, giving it the key 'options'
-    //   localStorage.setItem("options", json);
-    // }
-  }
+  // componentDidUpdate() {
+  //   if (prevState.options.length !== this.state.options.length) {
+  //     const json = JSON.stringify(this.state.options);
+  //     // Store our data in localStorage, giving it the key 'options'
+  //     localStorage.setItem("options", json);
+  //   }
+  // }
 
   handleDeleteAllOptions = () => {
     // this.setState(() => {

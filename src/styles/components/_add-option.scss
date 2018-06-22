@@ -12,12 +12,12 @@
 }
 
 .add-option__input {
+  border: none;
+  border-radius: 15px;
+  border-bottom: 1px solid;
   flex-grow: 1;
   margin-right: $s-size;
   padding: $s-size;
-  border: none;
-  border-radius: 15px;
-  border-bottom: 1px solid
 }
 
 // CSS media query used to modify site based on  device type. These settings are
@@ -26,7 +26,6 @@
   .add-option {
     flex-direction: column; // "column" stacks items vertically
   }
-
   .add-option__input {
     margin: 0 0 $s-size;
   }

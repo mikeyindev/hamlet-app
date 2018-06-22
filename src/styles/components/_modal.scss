@@ -20,12 +20,12 @@
 
 .modal {
   background: $sunny;
+  border-radius: 15px;
   color: $dark-jungle-green;
   max-width: 30rem;
   outline: none;
   padding: $l-size;
   text-align: center;
-  border-radius: 15px;
 }
 
 .modal__title {
