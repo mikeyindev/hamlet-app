@@ -5,16 +5,18 @@
 }
 
 .add-option-error {
-  color: $dark-jungle-green;
+  // color: $dark-jungle-green;
   font-style: italic;
   margin: $m-size 0 0 0;
   padding: 0 $m-size;
 }
 
 .add-option__input {
-  border: none;
+  // border: none;
+  border: 1px solid $gainsboro;
   border-radius: 15px;
-  border-bottom: 1px solid;
+  // border-bottom: 1px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex-grow: 1;
   margin-right: $s-size;
   padding: $s-size;

@@ -1,15 +1,18 @@
 // Widget header
 .widget {
-  background: $anti-flash-white;
-  border-radius: 15px;
-  margin-bottom: $l-size;
+  // background: $anti-flash-white;
+  border: 1px solid rgb(219, 219, 219);
   // border-bottom: .3rem solid darken($anti-flash-white, 10%);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 2px 2px;
+  margin-bottom: $l-size;
 }
 
 .widget-header {
+  // background: #D5DEDE;
+  border-bottom: 1px solid $gainsboro;
   border-radius: 15px 15px 0 0;
-  background: #D5DEDE;
-  color: $dark-jungle-green;
+  // color: $dark-jungle-green;
   display: flex;
   justify-content: space-between;
   padding: $s-size;
@@ -20,8 +23,9 @@
 }
 
 .widget-message {
-  border-bottom: .2rem solid darken($anti-flash-white, 10%);
-  color: $dark-jungle-green;
+  // border-bottom: .2rem solid darken($anti-flash-white, 10%);
+  border-bottom: 1px solid $gainsboro;
+  // color: $dark-jungle-green;
   margin: 0;
   padding: $l-size;
   text-align: center;

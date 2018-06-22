@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: $l-size $m-size;
-  border-bottom: .2rem solid darken($anti-flash-white, 10%);
+  border-bottom: .1px solid $gainsboro;
 }
 
 .option-wrapper {
@@ -10,7 +10,7 @@
 }
 
 .option__text {
-  color: $dark-jungle-green;
+  // color: $dark-jungle-green;
   font-weight: 500;
   font-size: 2rem;
   margin: 0;

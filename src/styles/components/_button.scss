@@ -3,7 +3,8 @@
   background: $sunny;
   border: none;
   // Darken the bottom border by 10%
-  border-bottom: .6rem solid darken($sunny, 10%);
+  // border-bottom: .6rem solid darken($sunny, 10%);
+  border-radius: 15px;
   color: $dark-jungle-green;
   font-weight: bold;
   font-size: $l-size;
@@ -24,7 +25,9 @@
 .button {
   background: $sunny;
   border: none;
-  border-bottom: .3rem solid darken($sunny, 10%);
+  // border-bottom: .3rem solid darken($sunny, 10%);
+  border-radius: 15px;
+  // box-shadow: rgba(0, 0, 0, 0.06) 0 1px 1px 1px;
   color: $dark-jungle-green;
   font-weight: 500;
   padding: $s-size;
@@ -41,11 +44,12 @@
   color: $link-color;
   cursor: pointer;
   padding: 0;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 .button__link:hover {
-  font-weight: bolder;
+  // font-weight: bolder;
+  text-decoration: underline;
 }
 
 // Play music button
@@ -55,8 +59,20 @@
 
 // Menu bar buttons
 .button--menu {
+  border: none;
+  color: $charcoal;
+  cursor: pointer;
   font-size: $m-size;
-  margin: 0 $m-size;
+  // margin: 0 $m-size;
+  position: relative;
+  padding: 2rem;
+  // padding-bottom: 2rem;
+}
+
+.button--menu:hover {
+  // border-bottom: solid 2px;
+  // color: $sunny;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.5);
 }
 
 // .button--login {

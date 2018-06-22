@@ -1,6 +1,8 @@
 .menu-bar {
-  background: $anti-flash-white;
+  // background: $anti-flash-white;
+  border-bottom: 1px solid $gainsboro;
   display: flex;
   justify-content: flex-start;
   margin-bottom: $s-size;
+  // padding: 1.5rem;
 }
