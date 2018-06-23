@@ -107,11 +107,12 @@ class HamletApp extends React.Component {
       return "The item has already been added.";
     }
 
-    // this.setState((prevState) => {
-    //   return {
-    //     options: prevState.options.concat([option])
-    //   };
-    // });
+    this.setState((prevState) => {
+      return {
+        options: prevState.options.concat([{ text: optionToAdd }])
+      };
+    });
+
     const uid = this.state.uid;
     if (uid) {
       database
@@ -122,11 +123,11 @@ class HamletApp extends React.Component {
             id: snapshot.key,
             text: optionToAdd
           };
-          this.setState((prevState) => ({
-            // Using concat() returns a new array without changing either of the
-            // array we're concatenating
-            options: prevState.options.concat([option])
-          }));
+          // this.setState((prevState) => ({
+          //   // Using concat() returns a new array without changing either of the
+          //   // array we're concatenating
+          //   options: prevState.options.concat([optionToAdd])
+          // }));
         });
     }
   }

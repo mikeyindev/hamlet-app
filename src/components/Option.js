@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Option = (props) => {
-  return (
-    <div className="option">
+  return <div className="option">
       <div className="option-wrapper">
         <input className="option__checkbox" type="checkbox" />
         <p className="option__text">
@@ -12,8 +11,7 @@ const Option = (props) => {
       <button className="button__link" onClick={() => props.handleDeleteOption(props.option.id)}>
         Remove
       </button>
-    </div>
-  );
+    </div>;
 };
 
 export default Option;

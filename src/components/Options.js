@@ -5,7 +5,7 @@ const Options = props => {
   console.log(props.options);
   return <div>
       <div className="widget-header">
-        <h3 className="widget-header__h3">Your Options</h3>
+        <h3 className="widget-header__h3">Your Tasks</h3>
         <button className="button__link" onClick={props.handleDeleteAllOptions}>
           Remove All
         </button>
