@@ -3,11 +3,11 @@
 
 **Click [here](https://hamlet-app.herokuapp.com/) to see the app in action!**
 
-Mobile version
+#### Mobile version screenshot:
 
 <img src="./screenshots/mobile-screenshot.png" width=500>
 
-Desktop version
+#### Desktop version screenshot:
 
 <img src="./screenshots/desktop-screenshot.png" width=500>
 
