@@ -200,7 +200,13 @@ class HamletApp extends React.Component {
         <div className="container">
           <Action hasOptions={this.state.options.length} handlePick={this.handlePick} />
           <div className="widget">
-            <Options options={this.state.options} handleDeleteAllOptions={this.handleDeleteAllOptions} handleDeleteOption={this.handleDeleteOption} />
+            <Options 
+              options={this.state.options} 
+              uid={this.state.uid}
+              handleDeleteAllOptions={this.handleDeleteAllOptions} 
+              handleDeleteOption={this.handleDeleteOption} 
+              handleLogin={this.handleLogin}
+            />
             <AddOption handleAddOption={this.handleAddOption} />
           </div>
         </div>

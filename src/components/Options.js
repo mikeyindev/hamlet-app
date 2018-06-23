@@ -19,7 +19,9 @@ const Options = props => {
           handleDeleteOption={props.handleDeleteOption}
         />
       ))}
-      {props.options.length === 0 && <p className="widget-message">Please add a task to get started :)</p>}
+      {!props.uid && 
+        <p className="widget-message">Please <a role="button" className="button__link" onClick={props.handleLogin}>login</a> to get started :)</p>}
+      {props.uid && props.options.length === 0 && <p className="widget-message">Please add a task to get started :)</p>}
     </div>;
 };
 
