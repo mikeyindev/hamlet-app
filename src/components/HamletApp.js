@@ -207,7 +207,7 @@ class HamletApp extends React.Component {
               handleDeleteOption={this.handleDeleteOption} 
               handleLogin={this.handleLogin}
             />
-            <AddOption handleAddOption={this.handleAddOption} />
+            {this.state.uid && <AddOption handleAddOption={this.handleAddOption} />}
           </div>
         </div>
         <OptionModal selectedOption={this.state.selectedOption} clearSelectedOption={this.clearSelectedOption} />
