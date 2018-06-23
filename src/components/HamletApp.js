@@ -106,12 +106,12 @@ class HamletApp extends React.Component {
     } else if (this.state.options.indexOf(optionToAdd) > -1) {
       return "The item has already been added.";
     }
-
-    this.setState((prevState) => {
-      return {
-        options: prevState.options.concat([{ text: optionToAdd }])
-      };
-    });
+    // User must now log in first before adding tasks.
+    // this.setState((prevState) => {
+    //   return {
+    //     options: prevState.options.concat([{ text: optionToAdd }])
+    //   };
+    // });
 
     const uid = this.state.uid;
     if (uid) {

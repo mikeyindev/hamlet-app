@@ -5,15 +5,20 @@ $anti-flash-white: #EAF4F4;
 $arsenic: #3C474B;
 $blue-chill: #3E858A;
 $blue-magenta-violet: #593C8F;
-$charcoal: #484848; // Font-color
+$charcoal: #484848;
 $cyan-azure: #4F7CAC;
 $dark-jungle-green: #162521;
-$gainsboro: #DBDBDB; // Border-color
+$gainsboro: #DBDBDB;
 // $link-color: #0645AD;
-$link-color: $blue-chill;
 $mint-green: #F6FFF8;
 $paynes-grey: #5D737E;
 $sunny: #FFF07C;
+
+$action-button-bg-color: $sunny;
+$action-button-color: $dark-jungle-green; 
+$border-color: $gainsboro;
+$default-font-color: $charcoal;
+$link-color: $blue-chill;
 
 // Spacing and font-size
 $s-size: 1.2rem;

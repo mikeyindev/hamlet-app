@@ -10,7 +10,7 @@
 
 .widget-header {
   // background: #D5DEDE;
-  border-bottom: 1px solid $gainsboro;
+  border-bottom: 1px solid $border-color;
   border-radius: 15px 15px 0 0;
   // color: $dark-jungle-green;
   display: flex;
@@ -24,7 +24,7 @@
 
 .widget-message {
   // border-bottom: .2rem solid darken($anti-flash-white, 10%);
-  border-bottom: 1px solid $gainsboro;
+  border-bottom: 1px solid $border-color;
   // color: $dark-jungle-green;
   margin: 0;
   padding: $l-size;

@@ -1,11 +1,11 @@
 // Styling for the "What should I do" button
 .big-button {
-  background: $sunny;
+  background: $action-button-bg-color;
   border: none;
   // Darken the bottom border by 10%
   // border-bottom: .6rem solid darken($sunny, 10%);
   border-radius: 10px;
-  color: $dark-jungle-green;
+  color: $action-button-color;
   font-weight: bold;
   font-size: $l-size;
   margin-bottom: $xl-size;
@@ -18,23 +18,23 @@
 }
 
 .big-button:hover {
-  background: darken($sunny, 10%);
+  background: darken($action-button-bg-color, 10%);
 }
 
 // Styling for "Add Option" button
-.button {
-  background: $sunny;
+.add-option-button {
+  background: $action-button-bg-color;
   border: none;
   // border-bottom: .3rem solid darken($sunny, 10%);
   border-radius: 10px;
   // box-shadow: rgba(0, 0, 0, 0.06) 0 1px 1px 1px;
-  color: $dark-jungle-green;
+  color: $action-button-color;
   font-weight: 500;
   padding: $s-size;
 }
 
-.button:hover {
-  background: darken($sunny, 10%);
+.add-option-button:hover {
+  background: darken($action-button-bg-color, 10%);
 }
 
 // Remove button
@@ -60,7 +60,7 @@
 // Menu bar buttons
 .button--menu {
   border: none;
-  color: $charcoal;
+  color: $default-font-color;
   cursor: pointer;
   font-size: $m-size;
   // margin: 0 $m-size;
