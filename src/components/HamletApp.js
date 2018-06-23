@@ -123,11 +123,11 @@ class HamletApp extends React.Component {
             id: snapshot.key,
             text: optionToAdd
           };
-          // this.setState((prevState) => ({
-          //   // Using concat() returns a new array without changing either of the
-          //   // array we're concatenating
-          //   options: prevState.options.concat([optionToAdd])
-          // }));
+          this.setState((prevState) => ({
+            // Using concat() returns a new array without changing either of the
+            // array we're concatenating
+            options: prevState.options.concat([optionToAdd])
+          }));
         });
     }
   }

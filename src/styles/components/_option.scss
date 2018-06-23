@@ -22,6 +22,7 @@
   zoom: 200%; // Make checkbox larger, transform blurs the checkbox
 }
 
+// p isn't nested inside option__checkbox element. 
 .option__checkbox:checked + p {
   text-decoration: line-through;
 }
