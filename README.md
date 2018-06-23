@@ -5,11 +5,11 @@
 
 Mobile version
 
-<img src="./screenshots/mobile_screenshot.png" width=500>
+<img src="./screenshots/mobile-screenshot.png" width=500>
 
 Desktop version
 
-<img src="./screenshots/desktop_screenshot.png" width=500>
+<img src="./screenshots/desktop-screenshot.png" width=500>
 
 This project uses React and Firebase to build a to-do list client-side app. User entered tasks are stored in the browser's LocalStorage.
 
