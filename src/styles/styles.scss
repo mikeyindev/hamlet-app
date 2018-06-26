@@ -2,11 +2,11 @@
 // The order of import matters. 'settings' has to be imported before 'base'.
 @import './base/settings';
 @import './base/base';
+@import './components/action.scss';
 @import './components/add-option.scss';
-@import './components/button.scss';
 @import './components/container';
 @import './components/header';
-@import './components/menu-bar.scss';
-@import './components/modal.scss';
+@import './components/menu.scss';
 @import './components/option.scss';
+@import './components/option-modal.scss';
 @import './components/widget.scss';

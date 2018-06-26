@@ -1,0 +1,20 @@
+// Styling for the "What should I do" button
+.Action__button {
+  // Darken the bottom border by 10%
+  // border-bottom: .6rem solid darken($sunny, 10%);
+  font-weight: bold;
+  font-size: $l-size;
+  margin-bottom: $l-size;
+  padding: 2.4rem;
+  width: 100%;
+}
+
+.Action__button:disabled {
+  opacity: .5;
+}
+
+@media(max-width: $desktop-breakpoint) {
+  .Action__button {
+    margin-bottom: $m-size;
+  }
+}

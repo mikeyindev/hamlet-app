@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Use props.children to render nested components such as 'MusicPlayer'.
-const MenuBar = (props) => (
-  <div className="menu-bar">
+const Menu = (props) => (
+  <div className="Menu">
     {props.children}
   </div>
 );
 
-export default MenuBar;
+export default Menu;

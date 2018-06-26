@@ -4,9 +4,9 @@ import Option from './Option';
 const Options = props => {
   console.log(props.options);
   return <div>
-      <div className="widget-header">
-        <h3 className="widget-header__h3">Your Tasks</h3>
-        <button className="button__link" onClick={props.handleDeleteAllOptions}>
+      <div className="Widget__header">
+        <h3 className="Widget__header__h3">Your Tasks</h3>
+        <button className="button--link" onClick={props.handleDeleteAllOptions}>
           Remove All
         </button>
       </div>
@@ -20,8 +20,8 @@ const Options = props => {
         />
       ))}
       {!props.uid && 
-        <p className="widget-message">Please <a role="button" className="button__link" onClick={props.handleLogin}>login</a> to get started :)</p>}
-      {props.uid && props.options.length === 0 && <p className="widget-message">Please add a task to get started :)</p>}
+        <p className="Widget__message">Please <a role="button" className="button--link" onClick={props.handleLogin}>login</a> to get started :)</p>}
+      {props.uid && props.options.length === 0 && <p className="Widget__message">Please add a task to get started :)</p>}
     </div>;
 };
 

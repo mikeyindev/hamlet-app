@@ -1,15 +1,11 @@
-.option {
+.Option {
   display: flex;
   justify-content: space-between;
   padding: $l-size $m-size;
   border-bottom: .1px solid $border-color;
 }
 
-.option-wrapper {
-  display: flex;
-}
-
-.option__text {
+.Option__text {
   // color: $dark-jungle-green;
   font-weight: 500;
   font-size: 2rem;
@@ -17,12 +13,17 @@
   word-break: break-all;
 }
 
-.option__checkbox {
+.Option__checkbox {
   margin: 0 $s-size 0 0;
   zoom: 200%; // Make checkbox larger, transform blurs the checkbox
 }
 
 // p isn't nested inside option__checkbox element. 
-.option__checkbox:checked + p {
+.Option__checkbox:checked + p {
   text-decoration: line-through;
+}
+
+// The div that wraps Option__checkbox and Option__text
+.Option__wrapper {
+  display: flex;
 }

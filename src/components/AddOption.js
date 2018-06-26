@@ -27,14 +27,15 @@ export default class AddOption extends React.Component {
 
   // If this.state.error is not undefined, render a paragraph containing the error message
   render() {
-    return (
-      <div>
-        {this.state.error && <p className="add-option-error">{this.state.error}</p>}
-        <form className="add-option" onSubmit={this.handleAddOption}>
-          <input className="add-option__input" type="text" name="option" />
+    return <div>
+        {this.state.error && 
+          <p className="AddOption--error">
+            {this.state.error}
+          </p>}
+        <form className="AddOption" onSubmit={this.handleAddOption}>
+        <input className="AddOption__input" type="text" name="option" />
           <button className="button">Add Task</button>
         </form>
-      </div>
-    );
+      </div>;
   }
 }

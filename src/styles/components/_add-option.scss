@@ -1,17 +1,17 @@
-.add-option {
+.AddOption {
   display: flex;
   flex-direction: row; // Stack things horizontally
   padding: $m-size;
 }
 
-.add-option-error {
+.AddOption-error {
   // color: $dark-jungle-green;
   font-style: italic;
   margin: $m-size 0 0 0;
   padding: 0 $m-size;
 }
 
-.add-option__input {
+.AddOption__input {
   // border: none;
   border: 1px solid $border-color;
   border-radius: 10px;
@@ -22,7 +22,7 @@
   padding: $s-size;
 }
 
-.add-option__input:focus {
+.AddOption__input:focus {
   border-color: #0095FF;
   box-shadow: inset 0 2px 2px #FAFAFB, 0 0 5px rgba(0, 119, 204, 0.4);
   transition: all 300ms ease-in-out;
@@ -31,10 +31,10 @@
 // CSS media query used to modify site based on  device type. These settings are
 // applied when screen size <= 45 rem, i.e. mobile phones
 @media (max-width: $desktop-breakpoint) {
-  .add-option {
+  .AddOption {
     flex-direction: column; // "column" stacks items vertically
   }
-  .add-option__input {
+  .AddOption__input {
     margin: 0 0 $s-size;
   }
 }

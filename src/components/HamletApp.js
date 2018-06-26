@@ -4,7 +4,7 @@ import Action from "./Action";
 import AddOption from "./AddOption";
 import Header from "./Header";
 import Login from './Login';
-import MenuBar from './MenuBar';
+import Menu from './Menu';
 import MusicPlayer from './MusicPlayer';
 import Options from "./Options";
 import OptionModal from './OptionModal';
@@ -126,7 +126,7 @@ class HamletApp extends React.Component {
           this.setState((prevState) => ({
             // Using concat() returns a new array without changing either of the
             // array we're concatenating
-            options: prevState.options.concat([optionToAdd])
+            options: prevState.options.concat([option])
           }));
         });
     }
@@ -190,16 +190,16 @@ class HamletApp extends React.Component {
     // You can pass in props, or key-value pairs, to components when you instantiate them. It's a one-way dataflow. HamletApp passes data to the Header and Options component in the form of props. Options component passes data to the Option component. Props can only be passed downstream.
     return <div>
         <Header />
-        <MenuBar>
+        <Menu>
           <Login handleLogin={this.handleLogin} 
             handleLogout={this.handleLogout}
             isLoggedIn={!!this.state.uid}
           />
           <MusicPlayer handlePlayMusic={this.handlePlayMusic} isPlaying={this.state.isPlaying} />
-        </MenuBar>
+        </Menu>
         <div className="container">
           <Action hasOptions={this.state.options.length} handlePick={this.handlePick} />
-          <div className="widget">
+          <div className="Widget">
             <Options 
               options={this.state.options} 
               uid={this.state.uid}

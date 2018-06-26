@@ -1,0 +1,26 @@
+// Menu bar buttons
+.Menu__button {
+  border: none;
+  color: $default-font-color;
+  cursor: pointer;
+  font-size: $m-size;
+  // margin: 0 $m-size;
+  // position: relative;
+  padding: $m-size;
+  // padding-bottom: 2rem;
+}
+
+.Menu__button:hover {
+  // border-bottom: solid 2px;
+  // color: $sunny;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.5);
+}
+
+.Menu {
+  // background: $anti-flash-white;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: $s-size;
+  // padding: 1.5rem;
+}

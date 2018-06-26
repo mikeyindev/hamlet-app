@@ -18,7 +18,7 @@
   opacity: 0;
 }
 
-.modal {
+.OptionModal {
   background: white;
   border: 1px solid $border-color;
   border-radius: 5px;
@@ -30,13 +30,17 @@
   text-align: center;
 }
 
-.modal__title {
+.OptionModal__title {
   margin: 0 0 $m-size
 }
 
-.modal__body {
+.OptionModal__body {
   font-size: 2rem;
   font-weight: 300;
   margin: 0 0 $l-size;
   word-break: break-all; // Break long words into multiple lines
+}
+
+.OptionModal__button {
+  padding: $s-size $m-size;
 }
