@@ -18,34 +18,3 @@ button {
 button:disabled {
   cursor: default;
 }
-
-// Default styling for buttons
-.button {
-  background: $action-button-bg-color;
-  border: none;
-  // border-bottom: .3rem solid darken($sunny, 10%);
-  border-radius: 5px;
-  // box-shadow: rgba(0, 0, 0, 0.06) 0 1px 1px 1px;
-  color: $action-button-color;
-  font-weight: 500;
-  padding: $s-size;
-}
-
-.button:hover {
-  background: darken($action-button-bg-color, 10%);
-}
-
-// Remove button
-.button--link {
-  background: none;
-  border: none;
-  color: $link-color;
-  cursor: pointer;
-  padding: 0;
-  // text-decoration: underline;
-}
-
-.button--link:hover {
-  // font-weight: bolder;
-  text-decoration: underline;
-}
