@@ -19,9 +19,11 @@
 }
 
 .modal {
-  background: $sunny;
-  border-radius: 15px;
-  color: $dark-jungle-green;
+  background: white;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 2px 2px;
+  color: $default-font-color;
   max-width: 30rem;
   outline: none;
   padding: $l-size;

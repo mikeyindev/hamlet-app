@@ -93,7 +93,7 @@ class HamletApp extends React.Component {
 
   handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
-    const option = this.state.options[randomNum];
+    const option = this.state.options[randomNum].text;
     this.setState({
       selectedOption: option
     });
