@@ -10,18 +10,14 @@
   padding: $s-size;
 }
 
-.button:hover {
+.button:hover, .big-button:hover {
   background: darken($action-button-bg-color, 10%);
 }
 
 // Styling for the "What should I do" button
 .big-button {
-  background: $action-button-bg-color;
-  border: none;
   // Darken the bottom border by 10%
   // border-bottom: .6rem solid darken($sunny, 10%);
-  border-radius: 5px;
-  color: $action-button-color;
   font-weight: bold;
   font-size: $l-size;
   margin-bottom: $l-size;
@@ -31,10 +27,6 @@
 
 .big-button:disabled {
   opacity: .5;
-}
-
-.big-button:hover {
-  background: darken($action-button-bg-color, 10%);
 }
 
 // Remove button
