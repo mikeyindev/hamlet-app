@@ -2,6 +2,8 @@
   "name": "indecision-app",
   "version": "1.0.0",
   "description": "",
+  "author": "Mike Yin",
+  "license": "MIT",
   "engines": {
     "node": "8.11.3",
     "npm": "5.6.0"
@@ -17,8 +19,6 @@
     "heroku-postbuild": "npm run build:prod",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "author": "Mike Yin",
-  "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
