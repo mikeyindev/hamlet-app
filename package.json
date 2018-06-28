@@ -17,7 +17,7 @@
     "heroku-postbuild": "npm run build:prod",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "author": "",
+  "author": "Mike Yin",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
