@@ -38,7 +38,9 @@
   font-size: 2rem;
   font-weight: 300;
   margin: 0 0 $l-size;
-  word-break: break-all; // Break long words into multiple lines
+  // Break long words into multiple lines to prevent overflow. Word may be
+  // broken at any character.
+  word-break: break-all; 
 }
 
 .OptionModal__button {
