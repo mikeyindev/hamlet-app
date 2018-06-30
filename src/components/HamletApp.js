@@ -191,14 +191,21 @@ class HamletApp extends React.Component {
     return <div>
         <Header />
         <Menu>
-          <Login handleLogin={this.handleLogin} 
+          <Login 
+            handleLogin={this.handleLogin} 
             handleLogout={this.handleLogout}
             isLoggedIn={!!this.state.uid}
           />
-          <MusicPlayer handlePlayMusic={this.handlePlayMusic} isPlaying={this.state.isPlaying} />
+          <MusicPlayer 
+            handlePlayMusic={this.handlePlayMusic} 
+            isPlaying={this.state.isPlaying} 
+          />
         </Menu>
         <div className="container">
-          <Action hasOptions={this.state.options.length} handlePick={this.handlePick} />
+          <Action 
+            hasOptions={this.state.options.length} 
+            handlePick={this.handlePick} 
+          />
           <div className="Widget">
             <Options 
               options={this.state.options} 
@@ -210,7 +217,10 @@ class HamletApp extends React.Component {
             {this.state.uid && <AddOption handleAddOption={this.handleAddOption} />}
           </div>
         </div>
-        <OptionModal selectedOption={this.state.selectedOption} clearSelectedOption={this.clearSelectedOption} />
+        <OptionModal 
+          selectedOption={this.state.selectedOption} 
+          clearSelectedOption={this.clearSelectedOption}
+        />
       </div>;
   }
 }

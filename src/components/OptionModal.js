@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 Modal.setAppElement(document.getElementById("app"));
 
 const OptionModal = (props) => {
+    
   // console.log(props);
   return (
   // onRequestClose allows users to click outside the modal or hit the esc button to close the modal
@@ -17,9 +18,10 @@ const OptionModal = (props) => {
       {props.selectedOption && <p className="OptionModal__body">{props.selectedOption}</p>}
     <button 
       className="button OptionModal__button" 
+      id="OptionModal__button"
       onClick={props.clearSelectedOption}
     >
-      Ok
+      Got It!
     </button>
   </Modal>
   );
